@@ -1,0 +1,39 @@
+name: Suggestion
+version: '1.0'
+main: kitesolutions.gg.suggestion.Suggestion
+api-version: '1.21'
+prefix: Bounty
+load: STARTUP
+authors:
+  - Akizuki
+website: https://akii.pro
+
+commands:
+  suggest:
+    description: Submit a suggestion
+    usage: /suggest <category> <suggestion> [priority]
+  suggestions:
+    description: Admin commands to manage suggestions
+    usage: /suggestions <list|approve|reject|view>
+    permission: suggestion.admin
+  vote:
+    description: Vote on a suggestion (up or down)
+    usage: /vote <id> <up/down>
+    permission: suggestion.vote
+  mysuggestions:
+    description: View your own submitted suggestions
+    usage: /mysuggestions
+  leaderboard:
+    description: View the top contributors to the suggestion system
+    usage: /leaderboard [<number>]
+    permission: suggestion.leaderboard
+permissions:
+  suggestion.admin:
+    description: Allows admin to manage suggestions
+    default: op
+  suggestion.vote:
+    description: Allows players to vote on suggestions
+    default: true
+  suggestion.leaderboard:
+    description: Allows players to view the leaderboard
+    default: true

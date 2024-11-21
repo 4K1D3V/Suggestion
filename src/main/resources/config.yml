@@ -1,0 +1,121 @@
+# ╔════════════════════════════════════════════════════════════════╗
+# ║                        ★★★★★★★★★★★★★★★★★★★★★           ║
+# ║                    ███╗   ███╗██████╗ ███████╗                 ║
+# ║                    ████╗ ████║██╔══██╗██╔════╝                 ║
+# ║                    ██╔████╔██║██████╔╝███████╗                 ║
+# ║                    ██║╚██╔╝██║██╔══██╗╚════██║                 ║
+# ║                    ██║ ╚═╝ ██║██████╔╝███████║                 ║
+# ║                    ╚═╝     ╚═╝╚═════╝ ╚══════╝                 ║
+# ║                        ★★★★★★★★★★★★★★★★★★★★★           ║
+# ║                                                                ║
+# ║                      Created by Kit (Version 1.0)              ║
+# ║                     Join our Support Server                    ║
+# ║                    ────────────► https://discord.akii.pro      ║
+# ║                                                                ║
+# ║                   ─────────────────────────────────────────────║
+# ║                       Welcome to the Future of Minecraft!      ║
+# ║                        Where suggestions shape the game!       ║
+# ║                                                                ║
+# ║                     ───────────────────────────────────────────║
+# ║                 Thank you for supporting the plugin!           ║
+# ║                     Your suggestions drive us forward!         ║
+# ║                                                                ║
+# ╚════════════════════════════════════════════════════════════════╝
+
+
+# General Settings
+# ---------------------------------------------
+# Controls basic plugin settings like cooldown time, suggestion limits, priority options, and rewards.
+
+suggestion-cooldown: 1800 # Cooldown time in seconds
+# Purpose: Defines the cooldown period (in seconds) between each suggestion submission.
+# Example: A value of 1800 means players must wait 30 minutes before submitting a new suggestion.
+
+max-suggestions-per-player: 3 # Maximum suggestions per player
+# Purpose: Limits the maximum number of suggestions a player can submit.
+# Example: Setting this to 3 means a player can submit up to 3 suggestions in total.
+
+enable-priority-suggestions: true # Allow priority suggestions
+# Purpose: Allows players to mark their suggestions as "priority", which will be highlighted for admin review.
+# Example: If set to true, players can submit suggestions with a priority tag.
+# Set this too false to disable priority suggestions.
+
+reward-approved-suggestions: true # Enable rewards for approved suggestions
+# Purpose: When enabled, players will receive rewards for their approved suggestions (like items or in-game perks).
+# Example: Set to true to reward players when their suggestions are approved by admins.
+
+discord:
+  webhook-url: "https://discord.com/api/webhooks/XXXX/YYYY" # Discord webhook URL
+  # Purpose: Use this to configure the Discord Webhook for sending notifications about new suggestions or status changes.
+  # Replace "XXXX/YYYY" with your actual Discord webhook URL.
+
+# Database Configuration (NEW)
+# ---------------------------------------------
+# Configures the database settings for storing suggestion data.
+
+database:
+  host: "localhost" # Host of the database
+  # Purpose: The address of your database server (e.g., "localhost" for a local MySQL server, or an IP address).
+  # Default: "localhost"
+
+  port: "3306" # Port for the database (default MySQL port is 3306)
+  # Purpose: The port to connect to the database. The default MySQL port is 3306.
+  # Change this if your MySQL server uses a different port.
+
+  name: "suggestions_db" # Name of the database
+  # Purpose: The name of the database where the suggestions will be stored.
+  # Default: "suggestions_db". Modify if your database name is different.
+
+  username: "root" # Username for the database connection
+  # Purpose: The username used to connect to the MySQL database.
+  # Default: "root". Change it to the correct username if needed.
+
+  password: "password" # Password for the database connection
+  # Purpose: The password used to connect to the MySQL database.
+  # Change this to your actual database password.
+
+# Voting Settings
+# ---------------------------------------------
+# Controls the voting system, allowing players to vote on suggestions.
+
+voting:
+  enabled: true # Enable the voting system
+  # Purpose: Whether the voting system is enabled. If true, players can vote on suggestions.
+  # Example: Set to false if you don't want players to vote on suggestions.
+
+  vote-threshold: 10 # Highlight suggestions with >= this many votes
+  # Purpose: Sets the number of votes required for a suggestion to be highlighted or prioritized.
+  # Example: If set to 10, any suggestion with 10 or more votes will be highlighted for admins to review.
+
+# Leaderboard Settings
+# ---------------------------------------------
+# Controls the leaderboard system that tracks top contributors of approved suggestions.
+
+leaderboard:
+  enabled: true # Enable leaderboard for suggestion contributors
+  # Purpose: If true, the leaderboard feature will be enabled to track the top players who contribute approved suggestions.
+  # Example: Set to false if you don't want to display a leaderboard.
+
+  reset-interval: daily # Can be 'daily', 'weekly', or 'monthly'
+  # Purpose: Defines how often the leaderboard is reset. Choose from:
+  # 'daily' - Resets every 24 hours.
+  # 'weekly' - Resets every week.
+  # 'monthly' - Resets every month.
+
+# Messages (messages.yml)
+# ---------------------------------------------
+# Customize the messages sent to players and admins regarding suggestions and votes.
+
+player:
+  submission-success: "&aYour suggestion has been submitted successfully!"
+  # Purpose: The message sent to players when their suggestion is successfully submitted.
+  # Example: You can modify the text and color codes here to change the success message.
+
+  submission-fail: "&cYou have reached your submission limit or need to wait."
+  # Purpose: The message shown to players when they cannot submit more suggestions.
+  # Example: This message appears if the player has exceeded their submission limit or is under cooldown.
+
+admin:
+  vote-success: "&aYou successfully voted!"
+  # Purpose: The message sent to admins (or players) when they successfully vote on a suggestion.
+  # Example: Modify the message here to adjust how voting success is communicated to admins.
